@@ -103,7 +103,7 @@ nav img{
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 1rem;
     align-items: center;
 }
 .navbar-mobile a{
@@ -121,7 +121,7 @@ nav img{
 .hero{
     padding: 0 7rem;
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,7 +224,7 @@ footer .logo-circle{
     }
     .hero{
         flex-direction:column-reverse;
-        padding:3rem 1rem 0;
+        padding: 3rem 1rem 0;
         gap: 0;
     }
     .hero img{
