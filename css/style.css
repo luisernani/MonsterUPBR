@@ -8,17 +8,16 @@
     
 }
 
-a{
+.navbar a, footer a{
     text-decoration: none;
     color: #F5F5F5;
 }
-a:hover{
+.navbar a:hover, footer a:hover{
     color: #FFC947;
 }
-nav{
+.navbar{
 
     background-color: #2940D3;
-
     display: flex;
     width: 100%;
     height: 8rem;
@@ -26,18 +25,19 @@ nav{
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-
     transition: height 0.3s ease;
     position: fixed;
 
 }
 
-nav.shrink {
-    height: 4rem; /* Adjust the height to your desired value when the navbar shrinks */
+.navbar.shrink {
+    height: 4rem;
+    background-color: #2940D3dd;
+    box-shadow: 0 10px 10px #151515;
 }
 
 nav ul{
-    background-color: #2940D3;
+    
     color: #F5F5F5;
     list-style: none;
     display: flex;
@@ -49,42 +49,62 @@ nav img{
     margin-left: auto;
 }
 
-main{
-    padding: 8rem 7rem 0;
-}
+
 .hero{
+    padding: 8rem 7rem 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 5rem;
+    
+}
+.hero-text{
     text-align: justify;
     color: #151515;
+    flex: 2;
 }
-.hero img{
-    max-height: 80%;
+.hero-img{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-img img{
+    max-height: 20rem;
+}
+.action-btn{
+    background-color: #39A444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 5rem 7rem;
+    border-radius: 2rem;   
+    font-size: 3rem; 
+}
+.action-btn:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 10px #151515;
+}
+.action-btn a{
+    text-decoration: none;
+    color: #F5F5F5;
 }
 
-article{
-    min-height: 90vh;
+.junho_23_up{    
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 3rem;
     align-items: center;
-    
-}
-h3{
-    font-size: 3rem;
+    background-color: #39A444;
+    padding: 0 7rem;
 }
 .junho_23_up img{
     max-width: 100%;
 }
-.junho_23_up a{
-    color: #39A444;
-}
-
 
 
 
@@ -121,4 +141,33 @@ footer .logo-circle{
     background-color: #2940D3;
     border-radius: 50%;
     padding: .5rem;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .navbar{
+        padding: 0 1rem;
+    }
+    .navbar ul{
+        display: none;
+    }
+    .hero{
+        flex-direction:column-reverse;
+        padding: 10rem 1rem 1rem;
+        gap: 0;
+    }
+    .action-btn{
+        margin: 1rem;
+        font-size: 1rem;
+    }
+   .junho_23_up{
+    padding: 0 1rem;
+   }
+   footer{
+    padding: 5rem 1rem;
+    justify-content: center;
+   }
+   footer .logo-circle{
+    display: none;
+   }
 }
