@@ -148,6 +148,9 @@ footer .logo-circle{
     .navbar{
         padding: 0 1rem;
     }
+    .navbar img{
+        max-width: 80%;
+    }
     .navbar ul{
         display: none;
     }
