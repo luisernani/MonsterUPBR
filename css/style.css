@@ -27,16 +27,16 @@
     font-size: 2rem;
     transition: height 0.3s ease;
     position: fixed;
+    z-index: 1;
 
 }
 
 .navbar.shrink {
-    height: 4rem;
-    background-color: #2940D3ee;
-    box-shadow: 0 10px 10px #151515;
+    height: 70px;
+    background-color: #2940D3;
 }
 
-nav ul{
+.navbar ul{
     
     color: #F5F5F5;
     list-style: none;
@@ -50,8 +50,76 @@ nav img{
 }
 
 
+/* menu hamburger $ navbar-mobile */
+.hamburger{
+    display: none;
+    position: relative;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.hamburger.active::before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburger.active::after{
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburger.active .bar{
+    opacity: 0;
+}
+
+.navbar-mobile{
+    min-height: 100vh;
+    background-color: #2940D3;
+    display: flex;
+    right: -100vw;
+    width: 100%;
+    justify-content:center;
+    font-size: 2rem;
+    transition: height 0.3s ease;
+    position: fixed;
+    transition: .3s ease;
+}
+.navbar-mobile.active{
+    right: 0;
+}
+.navbar-mobile ul{
+    color: #F5F5F5;
+    list-style: none;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar-mobile a{
+    text-decoration: none;
+    color: #F5F5F5;
+}
+.navbar-mobile a:hover{
+    color: #FFC947;
+}
+
+
+
+
+/* ------------------ HERO --------------- */
 .hero{
-    padding: 8rem 7rem 0;
+    padding: 0 7rem;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -147,6 +215,8 @@ footer .logo-circle{
 @media only screen and (max-width: 1200px) {
     .navbar{
         padding: 0 1rem;
+        height: 70px;
+        flex-direction: row-reverse;
     }
     
     .navbar ul{
@@ -154,16 +224,28 @@ footer .logo-circle{
     }
     .hero{
         flex-direction:column-reverse;
-        padding: 10rem 1rem 1rem;
+        padding:3rem 1rem 0;
         gap: 0;
     }
     .hero img{
         max-width: 80%;
     }
+    nav img{
+        margin-right: auto;
+        margin-left: 0%;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
     .action-btn{
         margin: 1rem;
         font-size: 1rem;
     }
+
+
+
    .junho_23_up{
     padding: 0 1rem;
    }
